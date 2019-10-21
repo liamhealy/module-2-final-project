@@ -1,2 +1,2 @@
-# Module 2 final project
+# Group-It
 The Flatiron School - module 2 final project.
