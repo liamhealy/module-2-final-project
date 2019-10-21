@@ -1,2 +1,2 @@
-# module-2-final-project
-The Flatiron School module-2 final project.
+# Module 2 final project
+The Flatiron School - module 2 final project.
