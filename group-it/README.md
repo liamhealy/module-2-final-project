@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Group-It
+The Flatiron School - module 2 final project.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Models:
+* Group
+    * A user can create a new group
+    * A user can visit an index page that lists all groups
+    * A user can view the details of a specific group
+    * A user can edit the details of a specific group (for now)
