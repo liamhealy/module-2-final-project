@@ -1,0 +1,18 @@
+<% if flash[:errors] %>
+    <p><%= flash[:errors].count %> error(s)</p>
+    <ul>
+        <% flash[:errors].each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @group do |f| %>
+    <%= f.label "Group Title: " %>
+    <%= f.text_field :title %><br>
+    <%= f.label "Theme/Subject: " %>
+    <%= f.text_field :theme %><br>
+    <%= f.label "Description: " %>
+    <%= f.text_area :description %><br>
+    <%= f.submit %>
+<% end %>
