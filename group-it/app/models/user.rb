@@ -4,4 +4,5 @@ class User < ApplicationRecord
     has_many :groups, through: :group_members
     has_many :comments, through: :notes, through: :group_members
     
+    validates :username, presence: true, uniqueness: true
 end

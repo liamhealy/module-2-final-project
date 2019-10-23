@@ -1,10 +1,10 @@
 <% if flash[:errors] %>
     <p><%= flash[:errors].count %> error(s)</p>
-    <ul>
-        <% flash[:errors].each do |message| %>
-            <li><%= message %></li>
-        <% end %>
-    </ul>
+        <ul>
+            <% flash[:errors].each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
 <% end %>
 
 <%= form_for @group do |f| %>

@@ -1,5 +1,11 @@
-
-    <%= form_for @user do |f| %>
+<% if flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+<% end %>
+<%= form_for @user do |f| %>
     <%= f.label :username, "Name" %>
     <%= f.text_field :username %> <br>
     <p>This will be your unique username</p> 

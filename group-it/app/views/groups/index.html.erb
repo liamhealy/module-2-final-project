@@ -1,5 +1,7 @@
 <h1>Groups Index</h1>
 
+<%= button_to "Create Group", { action: 'new', controller: 'groups' }, method: 'get' %>
+
 <% @groups.each do |group| %>
     <h2><%= link_to group.title, group_path(group) %></h2>
     <h3><%= group.theme %></h3>

@@ -1,5 +1,11 @@
 <h1>Login</h1>
 
+<% if flash[:errors] %>
+    <ul>
+        <li><%= flash[:errors] %></li>
+    </ul>
+<% end %>
+
 <%= form_tag sessions_path do %>
     <%= label_tag 'Username' %>
     <%= text_field_tag :username %><br>
