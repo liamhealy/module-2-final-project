@@ -19,6 +19,6 @@
 <h3>This Group's Members: </h3>
 <ul>
     <% @members.each do |member| %>
-        <li><%= member.username %></li>
+        <li><%= link_to member.username, user_path(member) %></li>
     <% end %>
 </ul>
