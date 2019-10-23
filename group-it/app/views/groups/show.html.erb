@@ -3,3 +3,15 @@
 <h2><%= @group.title %></h2>
 <h3><%= @group.theme %></h3>
 <h3><%= @group.description %></h3>
+<h3>This Group's Notes: </h3>
+<ul>
+    <% @notes.each do |note| %>
+        <li><%= link_to note.title, group_note_path %></li>
+    <% end %>
+</ul>    
+<h3>This Group's Members: </h3>
+<ul>
+    <% @members.each do |member| %>
+        <li><%= member.title %></li>
+    <% end %>
+</ul>    
