@@ -13,7 +13,7 @@
 <h3>This Group's Notes: </h3>
 <ul>
     <% @notes.each do |note| %>
-        <li><%= link_to note.title, group_note_path %></li>
+        <li><%= link_to note.title, "/groups/#{@group.id}/notes/#{note.id}" %></li>
     <% end %>
 </ul>
 <h3>This Group's Members: </h3>
