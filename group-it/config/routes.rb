@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show, :create, :edit, :update]
-  resources :group_members
+  resources :group_members, only: [:new, :create]
 
   # Sessions and user signup/login:
   get 'signup', to: 'users#new', as: 'signup'

@@ -1,0 +1,5 @@
+<h1>Join Group</h1>
+<h2>To join <%= @group.title %>, click "Join Group"</h2>
+<%= form_for @group_member do |f| %>
+    <%= f.submit "Join Group" %>
+<% end %>

@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
         @group = Group.find(params[:id])
         @notes = @group.notes
         @members = @group.users
+        @current_user_member = GroupMember.find_by(user_id: session[:user_id], group_id: @group.id)
     end
 
     def new
