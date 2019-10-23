@@ -1,0 +1,10 @@
+<h1>All comments RE: <%= @note.title %></h1>
+
+
+<ol>
+<h3>
+<% @comments.each do |c| %>
+<li><%= c.content %></li>
+<% end %>
+</h3>
+</ol>
