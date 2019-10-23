@@ -16,7 +16,7 @@ class NotesController < ApplicationController
 
     def create
         @note = Note.new(note_params)
-        @user_id = 15
+        @user_id = 15 #need to grab this from session[:user_id]
         @group_members = GroupMember.select{|gm| gm.user_id == @user_id}
         @group_member = @group_members.select{|gm| gm.group_id == params[:group_id].to_i}
         @note.group_member_id = @group_member.first.id
