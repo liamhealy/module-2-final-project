@@ -1,0 +1,5 @@
+<h1>Posts for <%= @current_group.title %> Group</h1>
+
+<% @notes.each do |n| %>
+    <%= link_to n.title, group_note_url(id: n.id) %> <br>
+<% end%>

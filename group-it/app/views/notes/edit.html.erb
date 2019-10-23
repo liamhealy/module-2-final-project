@@ -1,0 +1,24 @@
+<div>
+    <h1>Edit your note:</h1>
+</div>
+
+<div>
+    <% if flash[:errors] %>
+        <p><%= flash[:errors].count %> error(s)</p>
+        <ul>
+            <% flash[:errors].each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    <% end %>
+</div>
+
+<div>
+    <%= form_with model: @note, url: group_note_path(id: @note.id) do |f| %>
+        <%= f.label "Title: " %>
+        <%= f.text_field :title %><br>
+        <%= f.label "Content: " %>
+        <%= f.text_field :content %><br>
+        <%= f.submit %>
+    <% end %>
+</div>

@@ -1,0 +1,24 @@
+<div>
+    <h1>Make a post:</h1>
+</div>
+
+<div>
+    <% if flash[:errors] %>
+        <p><%= flash[:errors].count %> error(s)</p>
+        <ul>
+            <% flash[:errors].each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    <% end %>
+</div>
+
+<div>
+    <%= form_with model: @note, url: group_notes_path do |f| %>
+        <%= f.label "Title: " %>
+        <%= f.text_field :title %><br>
+        <%= f.label "Content: " %>
+        <%= f.text_field :content %><br>
+        <%= f.submit %>
+    <% end %>
+</div>
