@@ -4,6 +4,8 @@ class GroupMember < ApplicationRecord
   has_many :notes, dependent: :destroy
   has_many :comments, through: :notes
 
+  validates_uniqueness_of :user_id, :scope => [:group_id]
+
   def my_groups
     self.group
   end

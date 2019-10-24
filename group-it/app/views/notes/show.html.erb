@@ -1,20 +1,24 @@
-<div>
-<h1>Note title: <%= @note.title %></h1>
+<div class="container" style="padding-top: 10px;">
+    <div class="text-center px-5">
+        <%# <div class="card-columns"> %>
+            <div class="card">
+                <div class="card-body">
+                    <h1>Note title: <%= @note.title %></h1>
+
+                    <h3>Content: <%= @note.content %></h3>
+
+                    <ul>
+                    <h4>Comments: </h4>
+                    <% @comments.each do |c| %>
+                        <li><%= c.content %></li>
+                    <% end %>
+                    </ul>
+
+                    <%= link_to "New Comment", new_group_note_comment_path(note_id: @note.id) %>
+
+                </div>
+            </div>
+        <%# </div> %>
+    </div>
 </div>
 
-<div>
-<h3>Content: <%= @note.content %></h3>
-</div>
-
-<div>
-<ol>
-<h4>Comments: </h4>
-<% @comments.each do |c| %>
-    <li><%= c.content %></li>
-<% end %>
-</ol>
-</div>
-
-<div>
-<%= link_to "New Comment", new_group_note_comment_path(note_id: @note.id) %>
-</div>

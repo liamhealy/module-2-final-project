@@ -3,6 +3,10 @@ class GroupsController < ApplicationController
     def index
         @groups = Group.all
     end
+    
+    def new
+        @group = Group.new
+    end
 
     def show
         @group = Group.find(params[:id])
@@ -11,9 +15,6 @@ class GroupsController < ApplicationController
         @current_user_member = GroupMember.find_by(user_id: session[:user_id], group_id: @group.id)
     end
 
-    def new
-        @group = Group.new
-    end
 
     def create
         @group = Group.new(group_params)

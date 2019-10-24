@@ -36,29 +36,19 @@
   </div>
   <nav class="navbar rounded navbar-expand-lg navbar-dark bg-primary">
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <% if session[:user_id] %>
-          <li><%= button_to "My Profile", user_path(current_user), { method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
-        <% end %> 
-        <li><%= button_to "Groups", { action: 'index', controller: 'groups' }, {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
-        
-      </ul>
-      <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <% if session[:user_id] %>
-          <li class="nav-item">
-            <%= link_to "My Profile", user_path(current_user), class: 'nav-link' %>
-          </li>
-        <% end %>
-        <li class="nav-item">
-          <%= link_to "Groups", groups_path, class: 'nav-link' %>
-        </li>
-      </ul> -->
-      <span class="navbar-text">
-        <% if session[:user_id] %>
-          <%= link_to "Log Out", '/sessions', method: :delete %>
-        <% end %>
-      </span>
-    </div>
+    <ul class="navbar-nav mr-auto">
+      <% if session[:user_id] %>
+        <li><%= button_to "My Profile", user_path(current_user), { method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
+       <% end %> 
+      <li><%= button_to "Groups", { action: 'index', controller: 'groups' }, {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
+      <li><%= button_to "My Notes", group_notes_path(group_id: 1), {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
+      
+    </ul>
+    <span class="navbar-text">
+      <% if session[:user_id] %>
+        <%= link_to "Log Out", '/sessions', method: :delete %>
+      <% end %>
+    </span>
   </nav>
   </div>
   <!-- <%= button_to "Groups", { action: 'index', controller: 'groups' }, {method: 'get', type: 'button', class: 'btn-floating btn-lg btn-default' } %> -->
