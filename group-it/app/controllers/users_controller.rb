@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(params_user)
-
         if @user.save
             flash[:notice] = "Account successfully created"
             redirect_to login_path
@@ -20,8 +19,6 @@ class UsersController < ApplicationController
             flash[:errors] = @user.errors.full_messages
             redirect_to signup_path
         end
-        # @user = User.create(params_user)
-        # redirect_to login_path(@user)
     end
 
     def edit
@@ -38,9 +35,6 @@ class UsersController < ApplicationController
             redirect_to edit_user_path
         end
     end
-
-
-
     private
 
     def params_user

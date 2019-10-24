@@ -1,31 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
 <div class="container">
-    <div class="text-center">
-        <h1>Hello, <%= @user.username %></h1>
-        <!-- <p><%= @user.username %> is from <%= @user.location %> and is <%= @user.age %> years old.</p>
-        <p>Bio: <%= @user.bio %> </p> -->
-        <div class="container" style="background: lightgrey;">
-            <h3>Location: <%= @user.location %></h3>
-            <h3>Age: <%= @user.age %> years old</h3>
-            <h4><%= @user.bio %></h4>   
+    <h1>My GroupIt Profile</h1>
+
+    <p>This grid layout contains six columns and three rows:</p>
+</div>
+
+<div class="container">
+    <div class="grid-container">
+    <div class="item1">Hello, <%= @user.username %></div>
+    <div class="item2">
+        Location: <%= @user.location %> <br>
+        Age: <%= @user.age %> years old <br>    
         </div>
+    <div class="item3">
+        Biography <br>
+        <%= @user.bio %>
+        </div>  
+    <div class="item4"> My Groupit Groups <br>
+        <ul>
+            <% @groups.each do |group| %>
+                <li><%= group.title %></li>
+            <% end %>
+        </ul>
+    </div>
+    <div class="item5">
+        Notes <br>
+        <ul>
+            <% @notes.each do |note| %>
+                <li><%= note.title %> (<%= note.group.title %>)</li>
+            <% end %>
+        </ul>
+
+
+    </div>
     </div>
 </div>
+</body>
+</html>
 
-<div>
-<h3>Groups</h3>
-    <ul>
-        <% @groups.each do |group| %>
-            <li><%= group.title %></li>
-        <% end %>
-    </ul>
-</div>
 
-<div>
-<h3>Notes</h3>
-    <ul>
-        <% @notes.each do |note| %>
-            <li><%= note.title %> (<%= note.group.title %>)</li>
-        <% end %>
-    </ul>
-</div>
 
+
+
+
+
+
+  
