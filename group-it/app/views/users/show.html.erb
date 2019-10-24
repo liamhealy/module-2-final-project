@@ -1,12 +1,31 @@
-<div>
-    <h1>Group it member: <%= @user.username %></h1>
+<div class="container">
+    <div class="text-center">
+        <h1>Hello, <%= @user.username %></h1>
+        <!-- <p><%= @user.username %> is from <%= @user.location %> and is <%= @user.age %> years old.</p>
+        <p>Bio: <%= @user.bio %> </p> -->
+        <div class="container" style="background: lightgrey;">
+            <h3>Location: <%= @user.location %></h3>
+            <h3>Age: <%= @user.age %> years old</h3>
+            <h4><%= @user.bio %></h4>   
+        </div>
+    </div>
 </div>
 
 <div>
-    <p><%= @user.username %> is from <%= @user.location %> and is <%= @user.age %> years old.</p>
+<h3>Groups</h3>
+    <ul>
+        <% @groups.each do |group| %>
+            <li><%= group.title %></li>
+        <% end %>
+    </ul>
 </div>
 
 <div>
-    <p>Bio: <%= @user.bio %> </p>
+<h3>Notes</h3>
+    <ul>
+        <% @notes.each do |note| %>
+            <li><%= note.title %> (<%= note.group.title %>)</li>
+        <% end %>
+    </ul>
 </div>
 

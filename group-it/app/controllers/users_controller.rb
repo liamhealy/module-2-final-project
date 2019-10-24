@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id])    
+        @user = User.find(params[:id])
+        @groups = @user.groups
+        @notes = @user.notes  
     end
 
     def create
