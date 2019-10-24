@@ -1,15 +1,24 @@
-<h1>Login</h1>
+<div class="container">
+    <div class="text-center px-5">
+        <%# <div class="card-columns"> %>
+            <div class="card">
+                <div class="card-body">
+                    <h1>Login</h1>
 
-<% if flash[:errors] %>
-    <ul>
-        <li><%= flash[:errors] %></li>
-    </ul>
-<% end %>
+                    <% if flash[:errors] %>
+                        <ul>
+                            <li><%= flash[:errors] %></li>
+                        </ul>
+                    <% end %>
+                    <%= form_tag sessions_path do %>
+                        <%= label_tag 'Username' %>
+                        <%= text_field_tag :username %><br>
+                        <%= submit_tag "Log In" %>
+                    <% end %>
 
-<%= form_tag sessions_path do %>
-    <%= label_tag 'Username' %>
-    <%= text_field_tag :username %><br>
-    <%= submit_tag "Log In" %>
-<% end %>
-
-<p>Or <%= link_to "create an account", signup_path %></p>
+                    <p>Or <%= link_to "create an account", signup_path %></p>
+                </div>
+            </div>
+        <%# </div> %>
+    </div>
+</div>

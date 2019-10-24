@@ -1,24 +1,32 @@
-<h1>Group</h1>
+<div class="text-center">
 
-<% if @current_user_member %>
-    <%= link_to "Create a Note", "/groups/#{@group.id}/notes/new" %>
-<% else %>
-    <% session[:group_id] = @group.id %>
-    <%= link_to "Join this group", new_group_member_path %>
-<% end %>
-
-<h2><%= @group.title %></h2>
-<h3><%= @group.theme %></h3>
-<h3><%= @group.description %></h3>
-<h3>This Group's Notes: </h3>
-<ul>
-    <% @notes.each do |note| %>
-        <li><%= link_to note.title, "/groups/#{@group.id}/notes/#{note.id}" %></li>
+    <h1 class="display-3" style="font-family: 'Fascinate Inline', cursive; color: #5c98ff;"><%= @group.title %></h1>
+    <h3><%= @group.theme %></h3>
+    <h3><%= @group.description %></h3>
+    <% if @current_user_member %>
+        <%= link_to "Create a Note", "/groups/#{@group.id}/notes/new" %>
+    <% elsif !session[:id] %>
+        <%= link_to "Sign In or Sign Up in order to join and begin posting in this group!", login_path %>
+    <% else %>
+        <% session[:group_id] = @group.id %>
+        <%= link_to "Join this group", new_group_member_path %>
     <% end %>
-</ul>
-<h3>This Group's Members: </h3>
-<ul>
-    <% @members.each do |member| %>
-        <li><%= link_to member.username, user_path(member) %></li>
-    <% end %>
-</ul>
+</div>
+<div class="text-center">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>This Group's Notes</h3>
+                <% @notes.each do |note| %>
+                    <h4><%= link_to note.title, "/groups/#{@group.id}/notes/#{note.id}" %></h4>
+                <% end %>
+            </div>
+            <div class="col-md-6">
+                <h3>This Group's Members </h3>
+                <% @members.each do |member| %>
+                    <h4><%= link_to member.username, user_path(member) %></h4>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
