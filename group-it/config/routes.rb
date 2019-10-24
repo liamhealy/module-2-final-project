@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :group_members, only: [:new, :create]
 
   # Sessions and user signup/login:
+  root 'sessions#new'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   post 'sessions', to: 'sessions#create', as: 'sessions'
   delete 'sessions', to: 'sessions#destroy'
+
   # get '/groups/:group_id/notes/:note_id/comments/new', to: 'comments#new'
   # get '/groups/:group_id/notes/:id/comments/new', to: 'comments#new'
   

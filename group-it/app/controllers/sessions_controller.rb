@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
 
     def destroy
         session[:user_id] = nil
+        session[:group_id] = nil
         redirect_to login_path
     end
 
