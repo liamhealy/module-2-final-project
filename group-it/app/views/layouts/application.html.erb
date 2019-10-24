@@ -10,15 +10,31 @@
     <title>Group-It</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <% if session[:user_id] %>
-      <%= link_to "Log Out", '/sessions', method: :delete %>
-    <% end %>
+  <div class="container">
+  <nav class="navbar rounded navbar-expand-lg navbar-dark bg-primary">
+    <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <% if session[:user_id] %>
+        <li><%= button_to "My Profile", user_path(current_user), { method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
+       <% end %> 
+      <li><%= button_to "Groups", { action: 'index', controller: 'groups' }, {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
+      
+    </ul>
+    <span class="navbar-text">
+      <% if session[:user_id] %>
+        <%= link_to "Log Out", '/sessions', method: :delete %>
+      <% end %>
+    </span>
+  </nav>
+  </div>
+  <!-- <%= button_to "Groups", { action: 'index', controller: 'groups' }, {method: 'get', type: 'button', class: 'btn-floating btn-lg btn-default' } %> -->
     <%= yield %>
   </body>
 </html>

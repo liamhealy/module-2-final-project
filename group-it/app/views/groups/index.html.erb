@@ -1,20 +1,81 @@
-<h1>Groups Index</h1>
-
-<%= button_to "Create Group", { action: 'new', controller: 'groups' }, method: 'get' %>
 <div class="text-center">
+    <h1 class="display-1" style="font-family: 'Fascinate Inline', cursive; color: #5c98ff;">Group-It Groups</h1>
+<hr>
+</div>
+<style>
+    h2 {
+        background: #dbdfe5;
+    }
+
+    h3 {
+        background: lightgrey;
+    }
+</style>
+<div class="container">
+<div class="text-center px-5">
+    <div class="card-columns">
+    <% @groups.each do |group| %>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><%= link_to group.title, group_path(group) %></h4>
+                <p class="card-text"><%= group.theme %></p>
+                <p class="card-text"><%= pluralize group.users.count, 'User' %></p>
+            </div>
+        </div>
+    <% end %>
+    </div>
+<!--
+<div class="card card-cascade narrower">
+    <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+        <p>Groups</p>
+    </div>
+    <div class="px-4">
+    <table class= "table table-hover mb-0">
+        <thead class="black white-text">
+            <tr>
+                <th scope="col">Group Name</th>
+                <th scope="col">Subject</th>
+                <th scope="col"># of Active Users</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @groups.each do |group| %>
+                <tr>
+                    <td><%= link_to group.title, group_path(group) %></td>
+                    <td><%= group.theme %></td>
+                    <td><%= pluralize group.users.count, "Users" %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    </div>
+</div>
     <div class="container mt-3">
         <% @groups.each do |group| %>
         <div class="row">
             <div class="col-lg-4">
-                <h2><%= link_to group.title, group_path(group) %></h2>
+                <div class="demo-content">
+                    <h2><%= link_to group.title, group_path(group) %></h2>
+                </div>
             </div>
             <div class="col-lg-4">
-                <h3><%= group.theme %></h3>
+                <div class="demo-content">
+                    <h3><%= group.theme %></h3>
+                </div>
             </div>
             <div class="col-lg-4">
-                <h3><%= group.description %></h3>
+                <div class="demo-content bg-alt">
+                    <h3><%= pluralize group.users.count, "User" %></h3>
+                </div>
             </div>
         </div>
+        <hr>
         <% end %>
+    </div> -->
+</div>
+</div>
+<div class="container">
+    <div class="text-right" style="padding: 10px;">
+        <%= button_to "Create Group", { action: 'new', controller: 'groups' }, {method: 'get', class: 'btn btn-outline-primary btn-lg m-0 waves-effect' } %>
     </div>
 </div>
