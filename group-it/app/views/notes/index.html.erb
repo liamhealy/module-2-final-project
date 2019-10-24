@@ -1,5 +1,30 @@
-<h1>Posts for <%= @current_group.title %> Group</h1>
+<div class="container text-center">
+    <h2 class="display-6" style="font-family: 'Fascinate Inline', cursive; color: #5c98ff; padding: 10px">All of <%= @current_user.username %>'s notes:</h2>
+</div>
 
-<% @notes.each do |n| %>
-    <%= link_to n.title, group_note_url(id: n.id) %> <br>
-<% end%>
+<div class="container">
+<div class="card card-cascade narrower">
+    <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+    </div>
+    <div class="px-4">
+    <table class= "table table-hover mb-0">
+        <thead class="black white-text">
+            <tr>
+                <th scope="col">Note Title</th>
+                <th scope="col">Note Content</th>
+                <th scope="col">Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @notes.each do |note| %>
+                <tr>
+                    <td><%= link_to note.title, group_note_url(id: note.id) %></td>
+                    <td><%= note.content %></td>
+                    <td><%= link_to note.group.title, group_url(note.group) %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>

@@ -1,8 +1,10 @@
 class NotesController < ApplicationController
 
     def index
+        @current_user = User.find(session[:user_id])
         @current_group = Group.find(params[:group_id])
-        @notes = Note.select{|n| n.group == @current_group}
+        # @notes = Note.select{|n| n.group == @current_group}
+        @notes = @current_user.notes
     end
 
     def show

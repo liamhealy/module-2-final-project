@@ -48,10 +48,10 @@
             <% end %>
     </div>
     <div class="item5">
-        Notes <br>
+        Notes <br><br>
             <% @notes.each do |note| %>
-                <h4><%= link_to note.title, group_note_path(note) %> 
-                (<%= link_to note.group.title, group_path(note.group) %>) </h4>
+                <h4>Title: <%= link_to note.title, group_note_path(note) %> <br>
+                Group: <%= link_to note.group.title, group_path(note.group) %> </h4> <br>
             <% end %>
     </div>
     </div>

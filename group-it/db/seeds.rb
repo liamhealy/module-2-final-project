@@ -28,7 +28,7 @@ Comment.destroy_all
     Group.create(title: title, theme:theme, description: description)
 end
 
-50.times do
+1000.times do
     user_id = (1...50).to_a.sample
     group_id = (1...10).to_a.sample
     GroupMember.create(user_id:user_id, group_id:group_id)

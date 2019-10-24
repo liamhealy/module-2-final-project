@@ -37,6 +37,7 @@
         <li><%= button_to "My Profile", user_path(current_user), { method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
        <% end %> 
       <li><%= button_to "Groups", { action: 'index', controller: 'groups' }, {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
+      <li><%= button_to "My Notes", group_notes_path(group_id: 1), {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
       
     </ul>
     <span class="navbar-text">
