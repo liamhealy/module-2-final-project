@@ -50,7 +50,8 @@
     <div class="item5">
         Notes <br>
             <% @notes.each do |note| %>
-                <h4><%= note.title %> (<%= note.group.title %>)</h4>
+                <h4><%= link_to note.title, group_note_path(note) %> 
+                (<%= link_to note.group.title, group_path(note.group) %>) </h4>
             <% end %>
     </div>
     </div>

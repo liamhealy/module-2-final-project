@@ -5,7 +5,7 @@
     <h3><%= @group.description %></h3>
     <% if @current_user_member %>
         <%= link_to "Create a Note", "/groups/#{@group.id}/notes/new" %>
-    <% elsif !session[:id] %>
+    <% elsif !session[:user_id] %>
         <%= link_to "Sign In or Sign Up in order to join and begin posting in this group!", login_path %>
     <% else %>
         <% session[:group_id] = @group.id %>
