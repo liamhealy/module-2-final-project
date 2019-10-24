@@ -46,21 +46,15 @@
         <%= @user.bio %>
         </div>  
     <div class="item4"> My Groupit Groups <br>
-        <ul>
             <% @groups.each do |group| %>
-                <li><%= group.title %></li>
+                <h4><%= group.title %><h4>
             <% end %>
-        </ul>
     </div>
     <div class="item5">
         Notes <br>
-        <ul>
             <% @notes.each do |note| %>
-                <li><%= note.title %> (<%= note.group.title %>)</li>
+                <h4><%= note.title %> (<%= note.group.title %>)</h4>
             <% end %>
-        </ul>
-
-
     </div>
     </div>
 </div>
