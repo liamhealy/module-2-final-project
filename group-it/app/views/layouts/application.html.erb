@@ -41,7 +41,9 @@
         <li><%= button_to "My Profile", user_path(current_user), { method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
        <% end %> 
       <li><%= button_to "Groups", { action: 'index', controller: 'groups' }, {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
-      <li><%= button_to "My Notes", group_notes_path(group_id: 1), {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
+      <% if session[:group_id] && Group.first %>
+        <li><%= button_to "My Notes", group_notes_path(group_id: session[:group_id]), {method: 'get', class: 'btn btn-outline-light btn-sm m-0 waves-effect' } %></li>
+      <% end %>
       
     </ul>
     <span class="navbar-text">

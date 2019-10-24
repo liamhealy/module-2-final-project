@@ -48,7 +48,7 @@
             <% end %>
     </div>
     <div class="item5">
-        Notes <br><br>
+        Notes <br>
             <% @notes.each do |note| %>
                 <h4>Title: <%= link_to note.title, group_note_path(note) %> <br>
                 Group: <%= link_to note.group.title, group_path(note.group) %> </h4> <br>

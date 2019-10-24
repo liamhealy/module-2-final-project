@@ -8,6 +8,12 @@ class SessionsController < ApplicationController
 
         if @user
             session[:user_id] = @user.id
+            if Group.first == nil
+                session[:group_id] = 1    
+            else
+                session[:group_id] = Group.first.id
+            end
+            
             redirect_to user_path(@user)
         else
             flash[:errors] = "Username does not exist, try again"
