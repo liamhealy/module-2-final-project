@@ -1,9 +1,16 @@
-<h1>Welcome to GroupIt</h1>
-</div>
+<div class="container" style="padding: 10px;">
+    <div class="text-center px-5">
+        <%# <div class="card-columns"> %>
+            <div class="card">
+                <h1>Welcome to GroupIt</h1>
 
-<div>
-    <p>Please fill out your name, age, location, and give us a brief biography of yourself, and make sure to include your interests and any activities you enjoy!</p>
+                <div>
+                    <p>Please fill out your name, age, location, and give us a brief biography of yourself, and make sure to include your interests and any activities you enjoy!</p>
+                </div>
+                <div class="card-body">
+                    <%= render 'form' %>
+                </div>
+            </div>
+    </div>
 </div>
-
-<%= render 'form' %>
 

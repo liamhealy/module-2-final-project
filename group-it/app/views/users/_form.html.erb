@@ -7,7 +7,7 @@
 <% end %>
 <%= form_for @user do |f| %>
     <%= f.label :username, "Name" %>
-    <%= f.text_field :username %> <br>
+    <%= f.text_field :username %>
     <p>This will be your unique username</p> 
 
     <%= f.label :age, "Age" %>
@@ -15,11 +15,9 @@
     <%= f.label :location, "Location" %>
     <%= f.text_field :location %> <br><br>
 
-    <div>
-        <%= f.label :bio, "Bio" %> <br>
+    
+        <%= f.label :bio, "Bio" %>
         <%= f.text_area :bio %> <br>
-    </div>
-    <br>
     <%= f.submit %>
     <% end %>
 </div>
