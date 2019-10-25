@@ -11,7 +11,7 @@ class NotesController < ApplicationController
     def show
         @note = Note.find(params[:id])
         @comments = @note.comments
-        @current_user_member = GroupMember.find_by(user_id: session[:user_id], group_id: session[:group_id])
+        @current_user_member = GroupMember.find_by(user_id: session[:user_id], group_id: params[:group_id])
     end
 
     def new
