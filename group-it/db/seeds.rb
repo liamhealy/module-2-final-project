@@ -29,8 +29,8 @@ Comment.destroy_all
 end
 
 1000.times do
-    user_id = (1...50).to_a.sample
-    group_id = (1...10).to_a.sample
+    user_id = (User.first.id...User.last.id).to_a.sample
+    group_id = (Group.first.id...Group.last.id).to_a.sample
     GroupMember.create(user_id:user_id, group_id:group_id)
 end
 
