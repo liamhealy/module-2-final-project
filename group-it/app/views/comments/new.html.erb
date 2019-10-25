@@ -1,22 +1,25 @@
-<div>
-    <h1>Make a comment:</h1>
-</div>
+<div class="container" style="padding-top: 10px;">
+    <div class="text-center px-5">
+        <%# <div class="card-columns"> %>
+            <div class="card">
+                <div class="card-body">
+                    <h1>Make a comment RE: <%= @note.title %></h1> <br>
 
-<div>
-    <% if flash[:errors] %>
-        <p><%= flash[:errors].count %> error(s)</p>
-        <ul>
-            <% flash[:errors].each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-        </ul>
-    <% end %>
-</div>
-
-<div>
-    <%= form_with model: @comment, url: group_note_comments_path do |f| %>
-        <%= f.label "Content: " %>
-        <%= f.text_field :content %><br>
-        <%= f.submit %>
-    <% end %>
+                    <% if flash[:errors] %>
+                        <p><%= flash[:errors].count %> error(s)</p>
+                        <ul>
+                            <% flash[:errors].each do |message| %>
+                                <li><%= message %></li>
+                            <% end %>
+                        </ul>
+                    <% end %>
+                    <%= form_with model: @comment, url: group_note_comments_path do |f| %>
+                        <h4><%= f.label "Comment: " %></h4>
+                        <%= f.text_area :content %><br> <br>
+                        <%= f.submit %>
+                    <% end %>
+                </div>
+            </div>
+        <%# </div> %>
+    </div>
 </div>

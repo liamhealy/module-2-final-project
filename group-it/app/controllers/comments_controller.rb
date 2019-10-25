@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
 
     def new
+        @note = Note.find(params[:note_id])
         @comment = Comment.new
+
     end
 
     def create

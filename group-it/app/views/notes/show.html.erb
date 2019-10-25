@@ -6,11 +6,12 @@
                     <h1>Note title: <%= @note.title %></h1>
 
                     <h3>Content: <%= @note.content %></h3>
-
-                    <ul>
+                    <div class="container">
+                    <ul style="list-style: none">
                     <h4>Comments: </h4>
                     <% @comments.each do |c| %>
-                        <li><%= c.content %></li>
+                        <li><%= c.content %> <br>
+                        <p style="font-size: 12px; padding-left: 50px">-<%= link_to c.user.username, user_path(c.user) %> </p></li>
                     <% end %>
                     </ul>
                     <% if @current_user_member %>
