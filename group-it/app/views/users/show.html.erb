@@ -2,11 +2,11 @@
 <html>
 <head>
 <style>
-.item1 { grid-area: header; }
-.item2 { grid-area: menu; }
-.item3 { grid-area: main; }
-.item4 { grid-area: right; }
-.item5 { grid-area: footer; }
+  .item1 { grid-area: header; }
+  .item2 { grid-area: menu; }
+  .item3 { grid-area: main; }
+  .item4 { grid-area: right; }
+  .item5 { grid-area: footer; }
 
 .grid-container {
   display: grid;
@@ -25,6 +25,11 @@
   padding: 20px 0;
   font-size: 30px;
 }
+
+img {
+  width: 90%;
+  height: 50%;
+}
 </style>
 </head>
 <body>
@@ -35,6 +40,7 @@
     <div class="grid-container">
     <div class="item1">Hello, <%= @user.username %></div>
     <div class="item2">
+        <!-- <img src="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555921064/shape/mentalfloss/spongebob_0_0.jpg"><br> -->
         Location: <%= @user.location %> <br>
         Age: <%= @user.age %> years old <br>    
         </div>

@@ -13,9 +13,9 @@
                         <li><%= c.content %></li>
                     <% end %>
                     </ul>
-
-                    <%= link_to "New Comment", new_group_note_comment_path(note_id: @note.id) %>
-
+                    <% if @current_user_member %>
+                        <%= link_to "New Comment", new_group_note_comment_path(note_id: @note.id) %>
+                    <% end %>
                 </div>
             </div>
         <%# </div> %>
