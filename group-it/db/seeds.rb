@@ -44,5 +44,6 @@ end
 500.times do
     note_id = (1...100).to_a.sample
     content = Faker::Marketing.buzzwords
-    Comment.create(note_id:note_id, content:content)
+    author_id = (1...50).to_a.sample
+    Comment.create(note_id:note_id, content:content, author_id:author_id)
 end

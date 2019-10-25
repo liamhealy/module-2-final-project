@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @note = Note.find(params[:note_id].to_i)
         @comment.note_id = @note.id
-        # @comment.user = User.find(session[:user_id])
+        @comment.author_id = session[:user_id]
         @comment.save
         redirect_to group_note_path(id: @note.id)
     end
